@@ -109,6 +109,11 @@ public class MainApp extends JFrame implements ActionListener {
 		if (e.getSource() == loginbtn) {
 			String email = emailtf.getText().toString();
 			String password = passwordtf.getText().toString();
+			
+			if(email.isEmpty() || password.isEmpty()) {
+				JOptionPane.showMessageDialog(this, "Empty Fields");
+				
+			}else {
 
 			if(checkUserData(email, password)) {
 				MovieShowcase mv = new MovieShowcase();
@@ -117,6 +122,7 @@ public class MainApp extends JFrame implements ActionListener {
 				JOptionPane.showMessageDialog(this, "Invalid credentials");
 			}
 			
+		}
 		}
 
 	}
